@@ -20,9 +20,9 @@ class LinkedList {
           newNode.next = this.head
           this.head = newNode
       }
-    }
+  }
 // SIZE_requirement 2 of lab- ck w Ahmad
-    size() {
+  size() {
       let count = 0;
       let node = this.head;
       while (node) {
@@ -31,86 +31,86 @@ class LinkedList {
       }
       return count;
 
-    }
+  }
 // DELETE_requirement 3 of lab- ck w Ahmad
-    delete(data) { //data may
-        let node = this.head;
-        let counter = 0;
-        while (node.data !== data && node.next) {
-        counter++;
-        node = node.next;
-        }
-        let foundNode = node;
-        node = this.head;
-        for (let i = 1; i < counter; i++) {
-        node = node.next;
-        }
-        node.next = foundNode.next;
+  delete(data) { //data may
+      let node = this.head;
+      let counter = 0;
+      while (node.data !== data && node.next) {
+      counter++;
+      node = node.next;
+      }
+      let foundNode = node;
+      node = this.head;
+      for (let i = 1; i < counter; i++) {
+      node = node.next;
+      }
+      node.next = foundNode.next;
 
 // GETFIRST_requirement 4 of lab ck w Ahmad
 }
-    getFirst() {
-        return this.head;
-      }
+  getFirst() {
+      return this.head;
+    }
 
 // GETLAST_requirement 5 of lab ck w Ahmad
 
-    getLast() {
-        let node = this.head;
-        // if (!this.head) return null;
-        while (node.next) {
-        node = node.next;
-        }
-        return node;
-        }
-
-// SEARCH_requirement 6 of lab ck w Ahmad
-    // }
-    search(key) {
-        let node = this.head;
-        while (node !== null && node.data !== key) {
-          node = node.next;
-        }
-        return node;
-      }
-    clear() {
-        this.head = null;
-
-// GETKTH_requirement 7 of lab ck w Ahmad
-  }
-  getKth (k) {
-    let count = 1;
+  getLast() {
     let node = this.head;
-    while (node && count !== k) {
-      count++;
+// if (!this.head) return null;
+    while (node.next) {
       node = node.next;
     }
     return node;
-      // let currentNode = this.head
-      // for (let i = 2; i < k; i++) {
-      //     if (currentNode.next) {
-      //         currentNode = currentNode.next
-      //     } else {
-      //         return undefined
-      //     }
-      // }
-      // return currentNode.next
+    }
+
+// SEARCH_requirement 6 of lab ck w Ahmad
+    // }
+search(key) {
+  let node = this.head;
+  while (node !== null && node.data !== key) {
+    node = node.next;
   }
+  return node;
+}
+clear() {
+    this.head = null;
+
+// GETKTH_requirement 7 of lab ck w Ahmad
+}
+getKth (k) {
+  let count = 1;
+  let node = this.head;
+  while (node && count !== k) {
+    count++;
+    node = node.next;
+  }
+  return node;
+// let currentNode = this.head
+// for (let i = 2; i < k; i++) {
+//     if (currentNode.next) {
+//         currentNode = currentNode.next
+//     } else {
+//         return undefined
+//     }
+// }
+// return currentNode.next
+}
 
 // works w getkth lab ck w Ahmad
 getLength () {
-    let count = 0
-    let currentNode = this.head
-    while (currentNode) {
-        count++
-        currentNode = currentNode.next
-    }
-    return count
+  let count = 0
+  let currentNode = this.head
+  while (currentNode) {
+      count++
+      currentNode = currentNode.next
+  }
+  return count
 
 // GETKTH TO LAST_requirement 8 of lab  
 // Johns answer did not work
 // }
-//   getKthFromLast (k) {
+//  getKthFromLast (k) {
 //       return this.getKth(this.getLength() - k - 1)
 //   }
 
@@ -130,24 +130,24 @@ getKthToLast(k) {
 }
 
 // ISEMPTY_requirement 9 of lab
-  isEmpty() {
-    return !this.head;
-  }
+isEmpty() {
+  return !this.head;
+}
 
 // CLEAR_requirement 10 of lab
-  clear() {
-    this.head = null;
+clear() {
+  this.head = null;
 }
 // toArrayconvert_requirement 11 of lab     !!!NOT WORKING
 
-  toArray() {
-    let node = this.head;
-    let arr = [];
-    while (node) {
-      arr.push(node.data);
-      node = node.next;
-    }
-    return arr;
+toArray() {
+  let node = this.head;
+  let arr = [];
+  while (node) {
+    arr.push(node.data);
+    node = node.next;
+  }
+  return arr;
 
 // containsDuplicates_requirement 12 of lab    !!!NOT WORKING
 // containsDuplicates() {
@@ -155,23 +155,22 @@ getKthToLast(k) {
 //   const unique = [...new Set(arr)];
 //   return arr.length !== unique.length;
 }
-
-  containsDuplicates() {
-    const uniqueArr = [];
-    let node = this.head;
-    while (node) {
-      if (uniqueArr.includes(node.data)) {
-        return true;
-      }
-      uniqueArr.push(node.data);
-      node = node.next;
+containsDuplicates() {
+  const uniqueArr = [];
+  let node = this.head;
+  while (node) {
+    if (uniqueArr.includes(node.data)) {
+      return true;
     }
-    return false;
+    uniqueArr.push(node.data);
+    node = node.next;
+  }
+  return false;
   }
 }
 
 // DO NOT REMOVE THIS
 module.exports = {
-  Node,
-  LinkedList,
+Node,
+LinkedList,
 };
