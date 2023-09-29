@@ -21,7 +21,7 @@ class LinkedList {
           this.head = newNode
       }
   }
-// SIZE_requirement 2 of lab- ck w Ahmad
+// SIZE_requirement 2 of lab-done
   size() {
       let count = 0;
       let node = this.head;
@@ -47,13 +47,13 @@ class LinkedList {
       }
       node.next = foundNode.next;
 
-// GETFIRST_requirement 4 of lab ck w Ahmad
+// GETFIRST_requirement 4 of lab-done
 }
   getFirst() {
       return this.head;
     }
 
-// GETLAST_requirement 5 of lab ck w Ahmad
+// GETLAST_requirement 5 of lab-done
 
   getLast() {
     let node = this.head;
@@ -64,7 +64,7 @@ class LinkedList {
     return node;
     }
 
-// SEARCH_requirement 6 of lab ck w Ahmad
+// SEARCH_requirement 6 of lab-done
     // }
 search(key) {
   let node = this.head;
@@ -97,7 +97,7 @@ getKth (k) {
 // return currentNode.next
 }
 
-// works w getkth lab ck w Ahmad
+// works w getkth lab ck-done
 getLength () {
   let count = 0
   let currentNode = this.head
@@ -115,7 +115,7 @@ getLength () {
 //   }
 
 }
-
+// works w getkth lab ck-done w ahmad
 getKthToLast(k) {
   let node = this.head;
   let order = 1;
@@ -138,7 +138,7 @@ isEmpty() {
 clear() {
   this.head = null;
 }
-// toArrayconvert_requirement 11 of lab     !!!NOT WORKING
+// toArrayconvert_requirement 11 of lab-done
 
 toArray() {
   let node = this.head;
@@ -149,11 +149,6 @@ toArray() {
   }
   return arr;
 
-// containsDuplicates_requirement 12 of lab    !!!NOT WORKING
-// containsDuplicates() {
-//   const arr = this.toArray();
-//   const unique = [...new Set(arr)];
-//   return arr.length !== unique.length;
 }
 containsDuplicates() {
   const uniqueArr = [];
